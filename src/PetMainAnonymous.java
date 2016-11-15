@@ -1,7 +1,7 @@
 public class Anonymous {
     static class Pet {
-        char name;
-        Pet(char petname) {
+        String name;
+        Pet(String petname) {
             this.name = petname;
         }
         void makeSound(){
