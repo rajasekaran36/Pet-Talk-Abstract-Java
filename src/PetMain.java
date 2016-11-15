@@ -15,7 +15,8 @@ class Cat extends Pet{
     }
 
     public void MakeSound() {
-        System.out.print(super.name+" the Cat says: Meow! Meow!");
+	String type = "" + this.getClass(); 
+        System.out.print(super.name+" the " +type+ " says: Meow! Meow!");
     }
     
 }
@@ -28,7 +29,8 @@ class Dog extends Pet {
     }
 
     public void MakeSound() {
-        System.out.print(super.name+" the Dog says: Woof! Woof!");
+	String type = "" + this.getClass(); 
+        System.out.print(super.name+" the "+type+ " the Dog says: Woof! Woof!");
         
     }
     
@@ -45,7 +47,7 @@ public class PetMain{
 
 		@Override
 		void MakeSound() {
-			 System.out.print(super.name+" the Dog says: Shh! Shh!");
+			 System.out.print(super.name+" the Pet says: Shh! Shh!");
 		}
     	
     };
