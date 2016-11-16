@@ -9,6 +9,7 @@ abstract class Pet {
         MakeSound();
     }
     abstract void MakeSound();
+	
 	void IAmAlive (int n) { System.out.println("PET:: Pet " + n + " is now alive."); }
 }
 class Cat extends Pet{
@@ -46,7 +47,9 @@ class HandlePets{
 	
 	public static PetDetails getPetCode(String data){
 		PetDetails petInfo = new PetDetails();
+		//Data "1 Polly" is splited in to "1" as code and "Polly" as name and stored in "processedData" Array.
 		String[] processedData = data.split(" ");
+		//Preparation of petInfo 
 		petInfo.code=Integer.parseInt(processedData[0]);
 		petInfo.name=processedData[1];
 		return petInfo;
@@ -54,11 +57,13 @@ class HandlePets{
 	
 	public static Pet[] growPets(){
 		Pet[] pets = new Pet[10];
-		//System will get the pet name with code
+		//System will get the pet name with code exacly 10 inputs needed ( You can Link a File that contain inputs)
+		
 		Scanner in = new Scanner(System.in);
 		for(int i = 0;i<10;i++){
 			String data = in.nextLine();
 			PetDetails petinfo = HandlePets.getPetCode(data);
+			//Compars the input name and creats the pets
 			if(petinfo.name.equals("Kitty")){
 				pets[i] = new Cat("Kitty");
 			}
@@ -69,6 +74,7 @@ class HandlePets{
 				pets[i] = new Parrot("Polly");
 			}
 		}
+		//Array of pets return to the caller.
 		return pets;
 	}
 }
@@ -88,13 +94,13 @@ class Parrot extends Pet {
 
 public class PetsWithCode{
     public static void main(String[] args){
+	    //Array of pets will be created in this case 10
     Pet[] pets = HandlePets.growPets();
     int num_of_pets = pets.length;
     for(int i=0;i<num_of_pets;i++){
     	pets[i].wakeUp();
     System.out.println("");
     }
-    
     System.out.println("\n\n"+num_of_pets);
     }
     
@@ -117,7 +123,8 @@ public class PetsWithCode{
 
 //OutPut
 /*
- * Kitty the Cat says: Meow! Meow!
+ * 
+Kitty the Cat says: Meow! Meow!
 Doggie the Dog says: Woof! Woof!
 Polly the Parrot says: Hello! Hello!
 Kitty the Cat says: Meow! Meow!
