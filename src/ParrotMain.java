@@ -1,3 +1,4 @@
+//Pet has pet actions with abstract function MakeSound();
 abstract class Pet {
     String name;
     Pet(String name){
@@ -8,6 +9,7 @@ abstract class Pet {
     }
     abstract void MakeSound();
 }
+//Cat extended from Pet 
 class Cat extends Pet{
 
     Cat(String name) {
@@ -20,7 +22,7 @@ class Cat extends Pet{
     
 }
 
-
+//Dog extended from Pet 
 class Dog extends Pet {
 
     Dog(String name) {
@@ -35,7 +37,7 @@ class Dog extends Pet {
 }
 
 //Need to be define by user
-
+//Parrot extended from Pet 
 class Parrot extends Pet {
 
 	Parrot(String name) {
